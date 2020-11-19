@@ -100,9 +100,11 @@ h5 {
 .widget-carousel-header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .widget-carousel-header h3 {
   align-self: center;
+  color: var(--primary-darkPurple);
 }
 
 .button-slide button {
@@ -113,18 +115,38 @@ h5 {
   text-decoration: none;
   border: 1px solid var(--primary-darkPurple);
   background-color: white;
+  color: var(--primary-darkPurple);
 }
 .button-slide button {
   margin-left: 0.6rem;
 }
 .button-slide button i {
   font-size: 2rem;
-  color: var(--primary-darkPurple);
+}
+
+.button-slide button:hover {
+  background-color: var(--primary-darkPurple);
+  transition: all 0.5s ease-in-out;
+  color: white;
 }
 
 .content-carousel-item {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+.widget-carousel-temp p{
+  margin-top: 1rem;
+  font-weight:300;
+  font-size: 2rem;
+}
+.widget-carousel-footer{
+  margin-top: 1rem;
+}
+
+.widget-carousel-footer {
+  display: flex;
+justify-content: space-evenly;
 }
 
 #widget-favorite {
@@ -319,5 +341,3 @@ h5 {
 .btn-sities {
   color: white;
 }
-
-

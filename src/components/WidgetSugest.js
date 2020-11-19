@@ -47,7 +47,7 @@ export const WidgetSugest = () => {
                       <span>{`${data.wind.speed}m/s`}</span>
                     </div>
                     <div className="widget-day">
-                      <p> {GenerarNombre_Dia(ResultData)}</p>
+                      <p> {GenerarNombre_Dia(data.date)}</p>
                     </div>
                   </div>
                 </div>
