@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Peticiones } from "../api/peticiones";
 import { ConversorTempKaC } from "../utils/ConversorTemperatura";
 import { GenerarNombre_Dia } from "../utils/GenerarNombre_Dia";
 
 export const WidgetSugest = () => {
   const [ResultData, setResultData] = useState([]);
-  Peticiones(
+
+  useEffect(() => {
+   Peticiones(
     "https://run.mocky.io/v3/73c29128-d158-40db-aeae-ea78a0d762b7",
     "GET"
   ).then((result) => {
     setResultData([result.list[5]]);
   });
+  }, [setResultData])
+  
 
   return (
     <div id="widget-suggest">

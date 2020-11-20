@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { Peticiones } from "../api/peticiones";
 import { ConversorTempKaC } from "../utils/ConversorTemperatura";
 
 export const WidgetFavorite = () => {
   const [ResultData, setResultData] = useState([]);
   let arrayPronostico = [];
-  Peticiones(
+  useEffect(() => {
+   Peticiones(
     "https://run.mocky.io/v3/818d0158-727b-461e-9f76-06734ed7e582",
     "GET"
   ).then((result) => {
     arrayPronostico.push(result.places[0], result.places[1]);
     setResultData(arrayPronostico);
   });
+  }, [setResultData,arrayPronostico])
+  
 
   return (
     <div id="widget-favorite">

@@ -19,7 +19,7 @@ export const WidgetCarousel = () => {
     ).then((result) => {
       setPosts(result.list);
     });
-  }, []);
+  }, [setPosts]);
 
   return (
     <>

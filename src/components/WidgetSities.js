@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Peticiones } from "../api/peticiones";
 
 
 export const WidgetSities = () => {
   const [ResultData, setResultData] = useState([]);
 
-  let arraySites = [];
+  
+  useEffect(() => {
+    let arraySites = [];
   Peticiones(
     "https://run.mocky.io/v3/f8926877-849a-416f-8226-9fd9d9fc5e07",
     "GET"
@@ -13,6 +15,8 @@ export const WidgetSities = () => {
     arraySites.push(result.result[0], result.result[7], result.result[8]);
     setResultData(arraySites);
   });
+  }, [setResultData])
+  
 
   return (
     <div id="widget-sities">
@@ -26,14 +30,14 @@ export const WidgetSities = () => {
               return (
                 <div key={index} className="widget-car">
                   <div className="widget-sities-img">
-                    <img src={data.image} />
+                    <img src={data.image} alt={data.name}/>
                   </div>
                   <div className="widget-sities-text">
                     <div className="widget-city-name">
                       <h3>{data.name}</h3>
                     </div>
                     <div className="btn-sities">
-                      <a>VISIT PLACE</a>
+                      <a href="https://condorlabs.io/" target="blank">VISIT PLACE</a>
                     </div>
                   </div>
                 </div>

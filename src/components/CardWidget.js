@@ -3,6 +3,7 @@ import { ConversorTempKaC } from "../utils/ConversorTemperatura";
 import { GenerarNombre_Dia } from "../utils/GenerarNombre_Dia";
 
 export const CardWidget = ({ posts }) => {
+
   return (
     <>
       {posts === undefined

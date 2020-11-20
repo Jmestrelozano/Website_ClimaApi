@@ -3,7 +3,6 @@ import { Peticiones } from "../api/peticiones";
 import { ConversorTempKaC } from "../utils/ConversorTemperatura";
 export const WidgetHeader = () => {
   const [DataResult, setDataResult] = useState([]);
-  const [Temp, setTemp] = useState([]);
 
   useEffect(() => {
     
@@ -12,7 +11,6 @@ export const WidgetHeader = () => {
       "GET"
     ).then((result) => {
       setDataResult(result.places);
-      setTemp(ConversorTempKaC(result.places[2].main.temp));
     });
   }, []);
 
@@ -34,7 +32,7 @@ export const WidgetHeader = () => {
                   <i className="fas fa-map-marker-alt"></i> {DataResult[2].name}
                 </p>
               </div>
-              <p className="content-temp">{Temp}°C</p>
+              <p className="content-temp">{ConversorTempKaC(DataResult[2].main.temp)}°C</p>
               <p className="content-parrafo">
                 Good Morning,
                 <br />

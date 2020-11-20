@@ -338,7 +338,8 @@ h5 {
   position: absolute;
 }
 
-.btn-sities {
+.btn-sities a {
+  text-decoration: none;
   color: white;
 }
 

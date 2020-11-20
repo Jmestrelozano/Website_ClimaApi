@@ -13,8 +13,8 @@ export const WeatherSiteScreen = () => {
         <WidgetCarousel />
         <WidgetFavorite />
         <WidgetSugest />
-        <WidgetSities />
-      </div>
+        <WidgetSities /> 
+      </div> 
     </div>
   );
 };
