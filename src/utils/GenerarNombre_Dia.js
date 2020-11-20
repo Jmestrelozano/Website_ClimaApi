@@ -1,5 +1,5 @@
 export const GenerarNombre_Dia = (dia) => {
-  var dias = [
+  let dias = [
     "Domingo",
     "Lunes",
     "Martes",

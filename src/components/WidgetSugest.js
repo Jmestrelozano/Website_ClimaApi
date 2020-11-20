@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { peticiones } from "../api/peticiones";
+import { Peticiones } from "../api/peticiones";
 import { ConversorTempKaC } from "../utils/ConversorTemperatura";
 import { GenerarNombre_Dia } from "../utils/GenerarNombre_Dia";
 
 export const WidgetSugest = () => {
   const [ResultData, setResultData] = useState([]);
-  peticiones(
+  Peticiones(
     "https://run.mocky.io/v3/73c29128-d158-40db-aeae-ea78a0d762b7",
     "GET"
   ).then((result) => {

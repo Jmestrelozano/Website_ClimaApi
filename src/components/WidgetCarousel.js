@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { peticiones } from "../api/peticiones";
-import { GenerarNombre_Dia } from "../utils/GenerarNombre_Dia";
+import { Peticiones } from "../api/peticiones";
 import { CardWidget } from "./CardWidget";
 import { Carrousel } from "./Carrousel";
 
@@ -14,7 +13,7 @@ export const WidgetCarousel = () => {
   const pages = Math.ceil(posts.length / postsPerPage);
 
   useEffect(() => {
-    peticiones(
+    Peticiones(
       "https://run.mocky.io/v3/73c29128-d158-40db-aeae-ea78a0d762b7",
       "GET"
     ).then((result) => {

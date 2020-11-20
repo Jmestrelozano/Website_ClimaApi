@@ -9,10 +9,12 @@ export const WeatherSiteScreen = () => {
   return (
     <div className="container">
       <WidgetHeader />
-      <WidgetCarousel />
-      <WidgetFavorite />
-      <WidgetSugest />
-      <WidgetSities/>
+      <div className="container-body">
+        <WidgetCarousel />
+        <WidgetFavorite />
+        <WidgetSugest />
+        <WidgetSities />
+      </div>
     </div>
   );
 };

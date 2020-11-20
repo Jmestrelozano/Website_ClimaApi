@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { peticiones } from "../api/peticiones";
-import { ConversorTempKaC } from "../utils/ConversorTemperatura";
+import { Peticiones } from "../api/peticiones";
+
 
 export const WidgetSities = () => {
   const [ResultData, setResultData] = useState([]);
 
   let arraySites = [];
-  peticiones(
+  Peticiones(
     "https://run.mocky.io/v3/f8926877-849a-416f-8226-9fd9d9fc5e07",
     "GET"
   ).then((result) => {
