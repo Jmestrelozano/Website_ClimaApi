@@ -4,22 +4,15 @@ import { CardWidget } from "./CardWidget";
 import { Carrousel } from "./Carrousel";
 
 export const WidgetCarousel = () => {
-  const [posts, setPosts] = useState([]);
+  let resultado = Peticiones(
+    "https://run.mocky.io/v3/73c29128-d158-40db-aeae-ea78a0d762b7","List"
+  ).list
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(3);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-  const pages = Math.ceil(posts.length / postsPerPage);
-
-  useEffect(() => {
-    Peticiones(
-      "https://run.mocky.io/v3/73c29128-d158-40db-aeae-ea78a0d762b7",
-      "GET"
-    ).then((result) => {
-      setPosts(result.list);
-    });
-  }, [setPosts]);
+  const currentPosts = resultado.slice(indexOfFirstPost, indexOfLastPost);
+  const pages = Math.ceil(resultado.length / postsPerPage);
 
   return (
     <>

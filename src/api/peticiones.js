@@ -1,11 +1,18 @@
 
-export const Peticiones = async (url, method = "GET", body) => {
-    let respuesta = await fetch(`${url}`, {
-      method,
-      body: JSON.stringify(body),
-    });
+export const Peticiones =  (url,name) => {
+ 
+   var requestOptions = {
+    method:"GET",
+    redirect: 'follow'
+  };
   
-    let obtener = await respuesta.json();
-    return obtener;
+  fetch(url, requestOptions)
+    .then(response => response.json())
+    .then(result =>localStorage.setItem(name,JSON.stringify(result)))
+    .catch(error => console.log('error', error))
+  let DataResult = JSON.parse(localStorage.getItem(name))
+
+
+  return DataResult
   };
 
